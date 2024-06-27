@@ -68,7 +68,7 @@
 * **Current Offset**  
     - Consumer가 어디까지 메시지를 읽었는지 나타냄.
 
-### Zookeeper
+### [Zookeeper](https://github.com/LeeWooJung/ETLtoZeroETL/tree/main/5.%20ZeroETL/5-1.%20Apache%20Kafka/5-1-1.%20Zookeeper)
 
 * Kafka 클러스터의 메타데이터를 관리하고, 브로커의 상태를 모니터링함.
 
