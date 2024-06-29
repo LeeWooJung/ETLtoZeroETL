@@ -38,7 +38,7 @@
 * 데이터를 빠르게 전송하고 소비자에게 전달하여 지연 시간을 최소화함.
 
 ## 스트림 프로세싱 엔진
-* Apache Flink나 Apache Kafka Streams와 같은 **스트림 프로세싱 엔진이 필요**함.  
+* [Apache Flink](https://github.com/LeeWooJung/ETLtoZeroETL/tree/main/5.%20ZeroETL/5-2.%20Apache%20Flink)나 Apache Kafka Streams와 같은 **스트림 프로세싱 엔진이 필요**함.  
 * 이러한 도구들은 실시간 데이터 스트림을 처리하고, 필터링, 집계, 변환 등의 작업을 수행할 수 있음.
 
 ### 이유
