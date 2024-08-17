@@ -19,6 +19,11 @@ public class credentialLoader {
                     throw new IllegalArgumentException("There is no file in " + filePath);
                 }
 
+                /*
+                 * credential format
+                 * cliendId="blahblahblah"
+                 * clientSecret="blahblahblah"
+                 */
                 clientId = reader.readLine().split("=")[1].trim();
                 clientSecret = reader.readLine().split("=")[1].trim();
 
