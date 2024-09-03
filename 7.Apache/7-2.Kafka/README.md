@@ -65,9 +65,27 @@ docker-compose up -d
 
 ``` bash
 ERROR: client version 1.22 is too old. Minimum supported API version is 1.24, please upgrade your client to a newer version
-```  
+``` 
 
 위와 같은 Error가 발생하면 **docker-compose**의 **Version**을 2.4로 수정[링크](https://github.com/wurstmeister/kafka-docker/issues/461#issuecomment-517688464).
+
+* **Docker-compose Up/Down Error** 
+
+``` bash
+Couldn't connect to Docker daemon at http+docker://localhost - is it running?
+```
+
+위와 같은 Error가 발생하면 **sudo**를 앞에 붙여주면 된다. 혹은 그에 앞서 docker 서비스를 시작/재시작 해주면 된다.
+
+``` bash
+sudo service docker start  
+sudo service docker  
+```
+
+``` bash
+sudo docker-compose down  
+sudo docker-compose up  
+```
 
 ## Kafka Download
 
