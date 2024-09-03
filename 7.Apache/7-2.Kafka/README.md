@@ -79,7 +79,7 @@ Couldn't connect to Docker daemon at http+docker://localhost - is it running?
 
 ``` bash
 sudo service docker start  
-sudo service docker  
+sudo service docker restart  
 ```
 
 ``` bash
