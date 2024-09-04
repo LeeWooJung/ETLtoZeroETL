@@ -1,0 +1,34 @@
+version: '2.4'
+
+services:
+  jobmanager:
+#    image: flink:1.17.1
+    build:
+      context: . ## location
+      dockerfile: DockerFile ## name
+    hostname: jobmanager
+    ports:
+      - "8081:8081"
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+    command: jobmanager
+    networks:
+      - kafka-flink-network
+
+  taskmanager:
+#    image: flink:1.17.1
+    build:
+      context: .
+      dockerfile: DockerFile
+    depends_on:
+      - jobmanager
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+    command: taskmanager
+    networks:
+      - kafka-flink-network
+      
+      
+networks:
+  kafka-flink-network:
+    external: true
