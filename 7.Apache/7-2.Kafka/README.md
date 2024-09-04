@@ -87,6 +87,14 @@ sudo docker-compose down
 sudo docker-compose up  
 ```
 
+* **Version Obsolete**
+
+``` bash
+docker compose the attribute `version` is obsolete
+```
+
+위와 같은 Error가 발생하면 docker-compose.yml 의 Version 부분을 지우고 바로 **services**로 실행하면 된다. [링크](https://forums.docker.com/t/docker-compose-yml-version-is-obsolete/141313)
+
 ## Kafka Download
   
 **Docker File에 정의된 버전에 부합하는 kafka 다운도르** [링크](https://archive.apache.org/dist/kafka/)  
