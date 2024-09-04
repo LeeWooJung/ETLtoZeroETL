@@ -88,15 +88,6 @@ sudo docker-compose up
 ```
 
 ## Kafka Download
-
-### Docker File
-
-```vim
-ARG kafka_version=2.4.1
-ARG scala_version=2.12
-
-# VOLUME["/kafka"] # Docker-compose.yml에서 처리할 예정이라 주석처리함.
-```
   
 **Docker File에 정의된 버전에 부합하는 kafka 다운도르** [링크](https://archive.apache.org/dist/kafka/)  
 
