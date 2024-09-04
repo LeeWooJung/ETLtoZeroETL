@@ -32,6 +32,8 @@ services:
     image: wurstmeister/zookeeper
     ports:
       - "2181:2181"
+    networks:
+      - kafka-flink-network
     restart: unless-stopped
 
   kafka:
@@ -40,7 +42,7 @@ services:
         - "9092:9092" # 9092 -> 9092
     environment:
       DOCKER_API_VERSION: 1.46 # docker version
-      KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1 # local host
+      KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_MESSAGE_MAX_BYTES: 10000000
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
@@ -49,9 +51,26 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /kafka/data:/kafka # store data
+    networks:
+      - kafka-flink-network
 
-    #restart: unless-stopped
+    restart: unless-stopped
+      
+      
+networks:
+  kafka-flink-network:
+    external: true
 ```
+
+**Flink**와 연결을 위해 External network인 "Kafka-flink-network" 적용.
+
+## 네트워크 생성
+
+``` bash
+docker network create kafka-flink-network
+```
+
+Docker-Compose 서비스 실행 전에 네트워크 생성.
 
 ## Docker-compose 실행
 
