@@ -38,10 +38,22 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
 
-## 7. Docker 설치 확인
+## 7. Docker 상태 확인
 
 ``` bash
 sudo systemctl status docker
+```
+
+## 8. Docker 실행
+
+``` bash
+sudo service docker start
+```
+
+## 9. Docker 중지
+
+``` bash
+sudo service docker stop
 ```
 
 ## Error
